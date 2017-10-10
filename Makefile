@@ -1,4 +1,4 @@
-TOOLSPREFIX = arm-hisiv200-linux-
+TOOLSPREFIX = arm-kreatv-linux-gnueabihf-
 DEFINES += -DHISI_LINUX
 
 # Default tools 

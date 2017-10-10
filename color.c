@@ -498,3 +498,5 @@ void initlinedraw(int flag)
 	}
 	linedraw=cstable+sizeof cstable/sizeof*cstable-1;
 }
+
+

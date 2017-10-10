@@ -39,14 +39,14 @@
 #  include <os2.h>
 #  include <sys/nls.h>
 #  include <io.h>
-  /* On many systems stat() function is idential to lstat() function.
-   * But the OS/2 does not support symbolic links and doesn't have lstat() function.
-   */
+/* On many systems stat() function is idential to lstat() function.
+ * But the OS/2 does not support symbolic links and doesn't have lstat() function.
+ */
 #  define         lstat          stat
 #  define         strcasecmp     stricmp
-  /* Following two functions, getcwd() and chdir() don't support for drive letters.
-   * To implement support them, use _getcwd2() and _chdir2().
-   */
+/* Following two functions, getcwd() and chdir() don't support for drive letters.
+ * To implement support them, use _getcwd2() and _chdir2().
+ */
 #  define getcwd _getcwd2
 #  define chdir _chdir2
 #endif
@@ -72,49 +72,49 @@ typedef int bool;
 #endif
 
 struct _info {
-  char *name;
-  char *lnk;
-  bool isdir;
-  bool issok;
-  bool isfifo;
-  bool isexe;
-  bool orphan;
-  mode_t mode, lnkmode;
-  uid_t uid;
-  gid_t gid;
-  off_t size;
-  time_t atime, ctime, mtime;
-  dev_t dev;
-  ino_t inode;
-  #ifdef __EMX__
-  long attr;
-  #endif
-  char *err;
-  struct _info **child;
+	char *name;
+	char *lnk;
+	bool isdir;
+	bool issok;
+	bool isfifo;
+	bool isexe;
+	bool orphan;
+	mode_t mode, lnkmode;
+	uid_t uid;
+	gid_t gid;
+	off_t size;
+	time_t atime, ctime, mtime;
+	dev_t dev;
+	ino_t inode;
+#ifdef __EMX__
+	long attr;
+#endif
+	char *err;
+	struct _info **child;
 };
 /* hash.c */
 struct xtable {
-  unsigned int xid;
-  char *name;
-  struct xtable *nxt;
+	unsigned int xid;
+	char *name;
+	struct xtable *nxt;
 };
 struct inotable {
-  ino_t inode;
-  dev_t device;
-  struct inotable *nxt;
+	ino_t inode;
+	dev_t device;
+	struct inotable *nxt;
 };
 
 /* color.c */
 struct colortable {
-  char *term_flg, *CSS_name, *font_fg, *font_bg;
+	char *term_flg, *CSS_name, *font_fg, *font_bg;
 };
 struct extensions {
-  char *ext;
-  char *term_flg, *CSS_name, *web_fg, *web_bg, *web_extattr;
-  struct extensions *nxt;
+	char *ext;
+	char *term_flg, *CSS_name, *web_fg, *web_bg, *web_extattr;
+	struct extensions *nxt;
 };
 struct linedraw {
-  const char **name, *vert, *vert_left, *corner, *copy;
+	const char **name, *vert, *vert_left, *corner, *copy;
 };
 
 /* Function prototypes: */
