@@ -63,12 +63,12 @@ struct sorts {
 	char *name;
 	int (*cmpfunc)();
 } sorts[] = {
-		{"name", alnumsort},
-		{"version", versort},
-		{"size", fsizesort},
-		{"mtime", mtimesort},
-		{"ctime", ctimesort},
-		{NULL, NULL}
+	{"name", alnumsort},
+	{"version", versort},
+	{"size", fsizesort},
+	{"mtime", mtimesort},
+	{"ctime", ctimesort},
+	{NULL, NULL}
 };
 
 /* Externs */
