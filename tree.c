@@ -1258,7 +1258,7 @@ char Ftype(mode_t mode)
 	else if (m == S_IFIFO) return '|';
 	else if (m == S_IFLNK) return '@'; /* Here, but never actually used though. */
 #ifdef S_IFDOOR
-	else if (m == S_ISDOOR) return '>';
+        else if (m == S_IFDOOR) return '>';
 #endif
 	else if ((m == S_IFREG) && (mode & (S_IXUSR | S_IXGRP | S_IXOTH))) return '*';
 	return 0;
