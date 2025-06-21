@@ -1,0 +1,36 @@
+Tree installation instructions
+==============================
+
+This source tree includes a small Makefile used to build the `tree`
+executable.  The build process is largely the same on most Unix like
+systems.
+
+Building on Linux
+-----------------
+Simply run `make` in the source directory.  This produces the `tree`
+binary which can be installed with `make install` (you may need root
+permissions).
+
+Building on macOS or BSD
+------------------------
+The Makefile also works with Clang.  Ensure the development tools are
+installed and invoke `make`.  You can specify the compiler explicitly
+with `make CC=clang` if required.
+
+Cross compilation and other toolchains
+--------------------------------------
+All compiler and linker tools are prefixed by the `TOOLSPREFIX`
+variable in the Makefile.  To use a different toolchain, set this
+variable when invoking `make`:
+
+    make TOOLSPREFIX=aarch64-linux-gnu-
+
+Setting `TOOLSPREFIX` to an empty string builds with the host's default
+compilers.  This mechanism allows cross compiling for targets such as
+Windows using mingw, for example:
+
+    make TOOLSPREFIX=x86_64-w64-mingw32-
+
+Cleaning
+--------
+Run `make clean` to remove intermediate objects and the `tree` binary.
